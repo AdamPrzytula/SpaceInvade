@@ -15,6 +15,7 @@ public class InvaderController : MonoBehaviour
     private void Awake()
     {
         invManager = GetComponentInParent<InvaderMovement>();
+        scoreMan = FindObjectOfType<ScoreManager>();
     }
 
     void Start()
@@ -55,6 +56,7 @@ public class InvaderController : MonoBehaviour
         {
             Instantiate(explosion, transform.position, transform.rotation);
             invManager.alienCount--;
+            scoreMan.AddScore(points);
             gameObject.SetActive(false);
         }
     }

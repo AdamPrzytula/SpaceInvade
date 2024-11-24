@@ -61,10 +61,19 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "Invader" || other.gameObject.tag == "Enemy Laser")
         {
-
+            if (lives>0)
+            {
+                lives--;
+                livesMan.livesCounter--;
+                gM.StartCoroutine("PlayerRespawn");
+            }
+            else
+            {
+                gM.GameOver();  
+            }
 
             Instantiate(explosion,transform.position,transform.rotation);
-            gM.StartCoroutine("PlayerRespawn");
+            
 
         }
     }

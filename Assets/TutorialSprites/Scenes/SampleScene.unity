@@ -489,7 +489,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -90.00006, y: -19.999985}
+  m_AnchoredPosition: {x: -195, y: -20}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &141791459
@@ -1216,7 +1216,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -285.4303, y: -332.51437}
+  m_AnchoredPosition: {x: -337.6, y: -330.4}
   m_SizeDelta: {x: 48.84, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &371896901
@@ -1232,7 +1232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.07660556, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1252,7 +1252,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: lives
+  m_Text: Life
 --- !u!222 &371896902
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2370,8 +2370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752098b2e48379e41a9627102ade2a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreTxt: {fileID: 0}
-  hiScoreTxt: {fileID: 0}
+  scoreTxt: {fileID: 1629390138}
+  hiScoreTxt: {fileID: 141791459}
   scoreCount: 0
   hiScoreCount: 0
 --- !u!1001 &800820541
@@ -4382,8 +4382,11 @@ MonoBehaviour:
   moveSpeed: 3
   laser: {fileID: 7831295722152667967, guid: 3a44cea79debf3d4f8ac3e19bf39e568, type: 3}
   reloading: 0
+  lives: 0
+  dfltlives: 3
   explosion: {fileID: 1319369316062902670, guid: 5f5ffd2638e20f24282af5dbb180a00e, type: 3}
   gM: {fileID: 1352042932}
+  livesMan: {fileID: 1942434562}
 --- !u!1001 &1389851750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4898,7 +4901,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 90.00006, y: -19.999985}
+  m_AnchoredPosition: {x: 195, y: -20}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1629390138
@@ -5039,7 +5042,7 @@ Transform:
   m_GameObject: {fileID: 1734337005}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -378.80273, y: -280.50577, z: -5394.342}
+  m_LocalPosition: {x: -356.2, y: -276.9, z: 0}
   m_LocalScale: {x: 41.955997, y: 41.955997, z: 59.937134}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5749,6 +5752,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1942434561}
+  - component: {fileID: 1942434562}
   m_Layer: 0
   m_Name: Lives Manager
   m_TagString: Untagged
@@ -5774,9 +5778,23 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 67.7, y: 41.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1942434562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942434560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e27c5f10d68344eb8e2958192d1860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  livesCounter: 0
+  livesText: {fileID: 371896901}
 --- !u!1 &1968398930
 GameObject:
   m_ObjectHideFlags: 0
@@ -5860,8 +5878,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 1352042932}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: GameReset
         m_Mode: 1
         m_Arguments:

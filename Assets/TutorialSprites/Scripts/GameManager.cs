@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        
+        PlayerPrefs.SetInt("PlayerLives", player.dfltlives);
     }
 
     void Update()
@@ -81,6 +81,12 @@ public class GameManager : MonoBehaviour
 
     public void GameReset()
     {
+        PlayerPrefs.SetInt("PlayerLives", player.dfltlives);
+        PlayerPrefs.SetFloat("Score", 0);
+
+        player.lives = 3;
+        scoreMan.scoreCount= 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        ResumeGame();
     }
 }

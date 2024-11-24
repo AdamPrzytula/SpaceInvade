@@ -172,4 +172,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 3968458477359245182, guid: 185cae0ec211e544095b1f0d4a9a1a40, type: 3}
   explosion: {fileID: 1319369316062902670, guid: 5f5ffd2638e20f24282af5dbb180a00e, type: 3}
-  points: 0
+  points: 30

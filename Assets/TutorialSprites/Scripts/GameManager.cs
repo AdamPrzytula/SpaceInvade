@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+
     void GamePaused()
     {
          if (paused) PauseGame();
@@ -86,7 +88,8 @@ public class GameManager : MonoBehaviour
 
         player.lives = 3;
         scoreMan.scoreCount= 0;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        SceneManager.LoadScene(1);
         ResumeGame();
     }
 }

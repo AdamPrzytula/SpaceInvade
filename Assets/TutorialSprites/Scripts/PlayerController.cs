@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "Invader" || other.gameObject.tag == "Enemy Laser")
         {
-            if (lives>0)
+            if (lives > 1)
             {
                 lives--;
                 livesMan.livesCounter--;

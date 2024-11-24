@@ -4382,7 +4382,7 @@ MonoBehaviour:
   moveSpeed: 3
   laser: {fileID: 7831295722152667967, guid: 3a44cea79debf3d4f8ac3e19bf39e568, type: 3}
   reloading: 0
-  lives: 0
+  lives: 3
   dfltlives: 3
   explosion: {fileID: 1319369316062902670, guid: 5f5ffd2638e20f24282af5dbb180a00e, type: 3}
   gM: {fileID: 1352042932}

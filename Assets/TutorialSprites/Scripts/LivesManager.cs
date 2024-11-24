@@ -10,6 +10,6 @@ public class LivesManager : MonoBehaviour
 
     void Update()
     {
-        livesText.text = "x " + livesCounter;
+        livesText.text = livesCounter + "x ";
     }
 }

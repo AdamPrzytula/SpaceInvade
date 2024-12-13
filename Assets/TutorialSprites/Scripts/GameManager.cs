@@ -66,19 +66,19 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WaveReset()
     {
-            yield return new WaitForSeconds(0.3f);
-            PauseGame();
-            ClearScreen();
-            yield return new WaitForSecondsRealtime(3f);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            ResumeGame();
+        yield return new WaitForSeconds(0.3f);
+        PauseGame();
+        ClearScreen();
+        yield return new WaitForSecondsRealtime(3f);
+        SceneManager.LoadScene(1);
+        ResumeGame();
     }
 
     public void GameOver()
     {
         player.gameObject.SetActive(false);
             PauseGame();
-            gOMenu.SetActive(true);
+        gOMenu.SetActive(true);
     }
 
     public void GameReset()
@@ -91,5 +91,10 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene(1);
         ResumeGame();
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

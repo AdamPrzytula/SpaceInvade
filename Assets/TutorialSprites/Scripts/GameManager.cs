@@ -92,4 +92,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(1);
         ResumeGame();
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

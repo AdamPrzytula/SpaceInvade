@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public PlayerController player;
     public ScoreManager scoreMan;
+    private float highestScore;
 
     private void OnApplicationQuit()
     {
@@ -69,7 +70,6 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         PauseGame();
         ClearScreen();
-        yield return new WaitForSecondsRealtime(3f);
         SceneManager.LoadScene(1);
         ResumeGame();
     }
@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetFloat("Score", 0);
 
         player.lives = 3;
-        scoreMan.scoreCount= 0;
+        scoreMan.scoreCount = 0;
 
         SceneManager.LoadScene(1);
         ResumeGame();

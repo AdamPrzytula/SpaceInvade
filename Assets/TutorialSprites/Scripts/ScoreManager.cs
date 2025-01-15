@@ -17,7 +17,7 @@ public class ScoreManager : MonoBehaviour
         }
         if (PlayerPrefs.HasKey("Score"))
         {
-            hiScoreCount = PlayerPrefs.GetFloat("Score");
+            scoreCount = PlayerPrefs.GetFloat("Score");
         }
 
     }

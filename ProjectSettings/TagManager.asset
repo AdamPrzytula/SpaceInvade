@@ -8,6 +8,7 @@ TagManager:
   - Enemy Laser
   - Laser
   - Boundary
+  - LifeIcon
   layers:
   - Default
   - TransparentFX

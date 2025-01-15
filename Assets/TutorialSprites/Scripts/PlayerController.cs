@@ -27,12 +27,22 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        /*
         moveInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector2.right*moveSpeed*moveInput*Time.deltaTime);
         transform.position = new Vector2(Mathf.Clamp(transform.position.x, minPos, maxPos), transform.position.y);
+        */
+
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            Vector3 touchPosition = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 0));
+
+            transform.position = new Vector2(Mathf.Clamp(touchPosition.x, minPos, maxPos),transform.position.y);
+        }
     
-    
-        if (Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown(KeyCode.Space))
+        if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) 
         {
             Shoot();
         }

@@ -9,7 +9,7 @@ public class ShieldController : MonoBehaviour
 
     [SerializeField] float shieldPower;
 
-    private void Awake()
+    private void Start()
     {
         sprRenderer = GetComponent<SpriteRenderer>();
         col2D = GetComponent<CapsuleCollider2D>();
